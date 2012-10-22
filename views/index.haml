@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title= @title
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "style.css" }
+  %body
+    %h1 Welcome to Redis on AppFog!
+    #images
+      %img{ :class => "square", :src => "appfog.png" }
+      %img{ :class => "non-square", :src => "redis.svg" }
+    
+    %form{ :id => "newNote", :action => "/newnote", :method => "post" }
+      %fieldset
+        %label{ :for => "newNote" } Note to add:
+        %br
+        %input{ :type => "text", :name => "newNote" }
+        %br
+        %input{ :type => "submit", :value => "Submit"}
+        %br
+    
+    #notes-container
+      %h3 Notes:
+      %ul
+        - @notes.each do |note|
+          %li= note.to_s
+    
+    %br
+    %br
+    %form{ :id => "sortAlpha", :action => "/sortalpha", :method => "put" }
+      %input{ :type => "submit", :value => "Sort alphabetically" }
+    %form{ :id => "deleteNotes", :action => "/", :method => "post" }
+      %input{ :type => "submit", :value => "Delete all" }
+
+    %h4 Number of notes:
+    %p= @length
+  
+  // %script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js")
+  // %script(src="notes.js")

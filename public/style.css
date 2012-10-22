@@ -1,0 +1,42 @@
+body {
+	padding: 50px;
+	font-family: 'Book Antiqua';
+	margin: auto;
+	background-color: beige;
+}
+
+form#newNote {
+	width: 300px;
+	border: none;
+}
+
+li {
+	list-style: none;
+}
+
+#notes-container {
+	position: relative;
+	float: left;
+}
+
+#images {
+	position: relative;
+	float: left;
+}
+
+.square {
+	height: 200px;
+	width: 200px;
+}
+
+.non-square {
+	height: 200px;
+}
+
+.noBorder {
+	border: none;
+}
+
+.addBorder {
+	border: 1px solid black;
+}
