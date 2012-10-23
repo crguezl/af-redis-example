@@ -1,6 +1,6 @@
 body {
 	padding: 50px;
-	font-family: 'Book Antiqua';
+	font-family: 'Arial';
 	margin: auto;
 	background-color: #D5EEF6;
 }
@@ -12,6 +12,14 @@ form#newNote {
 
 li {
 	list-style: none;
+	border: 1px solid black;
+	background-color: beige;
+	max-width: 200px;
+	margin: auto;
+}
+
+img {
+	border: 1px solid gray;
 }
 
 #notes-container {
@@ -59,4 +67,20 @@ li {
 
 .addBorder {
 	border: 1px solid black;
+}
+
+.white {
+	background-color: white;
+}
+
+.tiny {
+	font-size: 7px;
+}
+
+.note {
+	padding: 5px;
+}
+
+.small {
+	font-size: 7px;
 }

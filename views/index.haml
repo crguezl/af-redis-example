@@ -14,7 +14,7 @@
     #mainForm
       %form{ :id => "newNote", :action => "/newnote", :method => "post" }
         %fieldset
-          %label{ :for => "newNote" } Note to add:
+          %label{ :for => "newNote" } Leave me a brief note!  
           %br
           %input{ :type => "text", :name => "newNote" }
           %br
@@ -25,7 +25,13 @@
       %h3 Notes:
       %ul
         - @notes.each do |note|
-          %li= note.to_s
+          %li.note
+            %span #{note.to_s}
+            %br
+            %span.tiny #{@time}
+            %br
+            %form{ :id => "deleteNote", :action => "/deleteNote", :method => "post" }
+              %input.small{ :type => "submit", :value => "Delete this note" }
       %br
     
     #button-container
@@ -36,8 +42,7 @@
       %br
     
     #right-sidebar
-      %h4 Number of notes:
-      %p= @length
+      %h4 Total number of notes: #{@length}
   
-  // %script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js")
-  // %script(src="notes.js")
+  %script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js")
+  %script(src="notes.js")
