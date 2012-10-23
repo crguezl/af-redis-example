@@ -1,0 +1,17 @@
+--- 
+applications: 
+  .: 
+    infra: hp
+    mem: 128M
+    framework: 
+      info: 
+        exec: ruby app.rb
+        mem: 128M
+        description: Sinatra Application
+      name: sinatra
+    services: 
+      af-redis-example: 
+        type: redis
+    url: ${name}.${target-base}
+    instances: 2
+    name: redis-example

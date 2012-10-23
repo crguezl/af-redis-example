@@ -2,7 +2,7 @@ body {
 	padding: 50px;
 	font-family: 'Book Antiqua';
 	margin: auto;
-	background-color: beige;
+	background-color: #D5EEF6;
 }
 
 form#newNote {
@@ -15,13 +15,33 @@ li {
 }
 
 #notes-container {
+	vertical-align: top;
 	position: relative;
 	float: left;
+	width: 400px;
+	border: 1px solid black;
 }
 
 #images {
+	width: 500px;
 	position: relative;
 	float: left;
+	vertical-align: top;
+}
+
+#button-container {
+	position: relative;
+	width: 100px;
+	float: left;
+	vertical-align: top;
+}
+
+#right-sidebar {
+	position: relative;
+	border: 1px solid black;
+	float: left;
+	width: 100px;
+	vertical-align: top;
 }
 
 .square {
