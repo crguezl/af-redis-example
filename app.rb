@@ -6,8 +6,8 @@ require 'haml'
 redis = Redis.new
 
 before do
-  @length = redis.llen("notes")
-  @exists = "noBorder"
+  @length = redis.LLEN("notes")
+  @time = Time.now.to_s
 end
 
 # configure do
@@ -16,43 +16,32 @@ end
 
 get '/' do
   @title = "Sinatra + Redis + AppFog = WIN"
+  @notes = redis.LRANGE("notes", 0, -1)
 
-  @time = Time.now.to_s
-  
-  @notes = redis.lrange("notes", 0, -1)
-
-  if @notes.length >= 1
-    @exists = "addBorder"
-  end
-  
   haml :index
 end
 
-post '/newnote' do
+post '/newNote' do
   if params[:newNote].length >= 1
-    # @newNote = params[:newNote]
-    redis.rpush("notes", params[:newNote])
+    @newNote = params[:newNote]
+    redis.LPUSH("notes", @newNote)
   end
 
   redirect '/'
 end
 
-post '/sortalpha' do
-  @notes = redis.sort("notes", alpha)
+post '/editNote' do
 
-  haml :index
 end
 
 post '/deleteNote' do
-  @noteToDelete = redis.lindex("notes", params[:deleteNote])
-
-  redis.lrem("notes", @noteToDelete)
+  redis.LREM("notes", 1, @noteToDelete)
 
   redirect '/'
 end
 
 post '/' do
-  @notes = redis.lrange("notes", 0, -1)
+  @notes = redis.LRANGE("notes", 0, -1)
 
   redis.flushall
 

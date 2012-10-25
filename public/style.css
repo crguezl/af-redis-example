@@ -84,3 +84,7 @@ img {
 .small {
 	font-size: 7px;
 }
+
+.textInput {
+	width: 35em;
+}

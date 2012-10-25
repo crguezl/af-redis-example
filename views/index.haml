@@ -12,11 +12,11 @@
       %br
 
     #mainForm
-      %form{ :id => "newNote", :action => "/newnote", :method => "post" }
+      %form{ :id => "newNote", :action => "/newNote", :method => "post" }
         %fieldset
           %label{ :for => "newNote" } Leave me a brief note!  
           %br
-          %input{ :type => "text", :name => "newNote" }
+          %input{ :type => "text", :name => "newNote", :class => "textInput" }
           %br
           %input{ :type => "submit", :value => "Submit"}
           %br
@@ -32,6 +32,8 @@
             %br
             %form{ :id => "deleteNote", :action => "/deleteNote", :method => "post" }
               %input.small{ :type => "submit", :value => "Delete this note" }
+            %form{ :id => "editNote", :action => "/editNote", :method => "post" }
+              %input.small{ :type => "submit", :value => "Edit this note" }
       %br
     
     #button-container
