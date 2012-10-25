@@ -37,17 +37,10 @@ img {
 	vertical-align: top;
 }
 
-#button-container {
-	position: relative;
-	width: 100px;
-	float: left;
-	vertical-align: top;
-}
-
 #right-sidebar {
 	position: relative;
 	border: 1px solid black;
-	float: left;
+	float: right;
 	width: 100px;
 	vertical-align: top;
 }

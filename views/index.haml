@@ -29,20 +29,10 @@
             %span #{note.to_s}
             %br
             %span.tiny #{@time}
-            %br
-            %form{ :id => "deleteNote", :action => "/deleteNote", :method => "post" }
-              %input.small{ :type => "submit", :value => "Delete this note" }
-            %form{ :id => "editNote", :action => "/editNote", :method => "post" }
-              %input.small{ :type => "submit", :value => "Edit this note" }
-      %br
     
-    #button-container
-      %form{ :id => "sortAlpha", :action => "/sortalpha", :method => "post" }
-        %input{ :type => "submit", :value => "Sort alphabetically" }
-      %form{ :id => "deleteNotes", :action => "/", :method => "post" }
-        %input{ :type => "submit", :value => "Delete all" }
-      %br
-    
+    %form{ :id => "deleteNotes", :action => "/deleteNotes", :method => "post" }
+      %input{ :type => "submit", :value => "Delete all" }
+        
     #right-sidebar
       %h4 Total number of notes: #{@length}
   
