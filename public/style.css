@@ -1,83 +1,35 @@
 body {
-	padding: 50px;
-	font-family: 'Arial';
-	margin: auto;
-	background-color: #D5EEF6;
-}
+  background-color: #ffb753;
+  font-color: #a64e00;
+  font-family: Verdana; }
 
-form#newNote {
-	width: 300px;
-	border: none;
-}
+ul {
+  list-style-type: none; }
 
 li {
-	list-style: none;
-	border: 1px solid black;
-	background-color: beige;
-	max-width: 200px;
-	margin: auto;
-}
+  padding: 10px;
+  border: 1px solid black;
+  max-width: 200px; }
 
-img {
-	border: 1px solid gray;
-}
-
-#notes-container {
-	vertical-align: top;
-	position: relative;
-	float: left;
-	width: 400px;
-	border: 1px solid black;
-}
-
-#images {
-	width: 500px;
-	position: relative;
-	float: left;
-	vertical-align: top;
-}
+#mainForm {
+  background-color: #ff9a40;
+  width: 300px; }
 
 #right-sidebar {
-	position: relative;
-	border: 1px solid black;
-	float: right;
-	width: 100px;
-	vertical-align: top;
-}
+  float: right; }
 
-.square {
-	height: 200px;
-	width: 200px;
-}
-
-.non-square {
-	height: 200px;
-}
-
-.noBorder {
-	border: none;
-}
-
-.addBorder {
-	border: 1px solid black;
-}
-
-.white {
-	background-color: white;
-}
+.button {
+  background-color: #ff7800; }
 
 .tiny {
-	font-size: 7px;
-}
+  font-size: 7px; }
 
-.note {
-	padding: 5px;
-}
+.square {
+  height: 200px;
+  width: 200px; }
 
-.small {
-	font-size: 7px;
-}
+.non-square {
+  max-height: 200px; }
 
-.textInput {
-	width: 35em;
-}
+.light {
+  background-color: #ffee73; }
