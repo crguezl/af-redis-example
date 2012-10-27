@@ -8,11 +8,6 @@
 
     #right-sidebar
       %h4 Total number of notes: #{@length}
-    
-    #images
-      %img{ :class => "square", :src => "appfog.png" }
-      %img{ :class => "non-square", :src => "redis.svg" }
-      %br
 
     #mainForm
       %form{ :id => "newNote", :action => "/newNote", :method => "post" }
@@ -29,7 +24,7 @@
       %ul
         - @notes.each do |note|
           %li.note
-            %span #{note.to_s}
+            %span #{note}
             %br
             %span.tiny #{@time}
     

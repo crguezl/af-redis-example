@@ -2,8 +2,19 @@ require 'rubygems'
 require 'sinatra'
 require 'redis'
 require 'haml'
+require 'json'
 
-redis = Redis.new#(:port => VCAP_SERVICES)
+#configure do
+ # services = JSON.parse(ENV['VCAP_SERVICES'])
+ # redis_key = services.key.select { |svc| svc =~ /redis/i }.first
+ # redis = services[redis_key].first['credentials']
+ # redis_conf = { :host => redis['hostname'], :port => redis['port'], :password => redis['password'] }
+ # @@redis = Redis.new redis_conf
+#end
+
+#redisConfig = { :port => VCAP_SERVICES }
+
+redis = Redis.new# redisConfig
 
 before do
   @length = redis.LLEN("notes")

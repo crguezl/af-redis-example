@@ -7,8 +7,10 @@ $five: #FFEE73;
 
 body {
 	background-color: $three;
-	font-color: $four;
-	font-family: Verdana;
+	font: {
+		color: $four;
+		family: Verdana;
+	}
 }
 
 ul {
