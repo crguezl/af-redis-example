@@ -1,3 +1,4 @@
 manifest.yml
 *.rdb
 /public/.sass-cache
+/public/style.scss

@@ -6,9 +6,6 @@
   %body
     %h1 Welcome to Redis on AppFog!
 
-    #right-sidebar
-      %h4 Total number of notes: #{@length}
-
     #mainForm
       %form{ :id => "newNote", :action => "/newNote", :method => "post" }
         %fieldset
@@ -30,6 +27,9 @@
     
     %form{ :id => "deleteNotes", :action => "/deleteNotes", :method => "post" }
       %input{ :type => "submit", :value => "Delete all" }
+
+    #right-sidebar
+      %h4 Total number of notes: #{@length}
         
   %script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js")
   %script(src="notes.js")
