@@ -24,17 +24,17 @@ get '/' do
   haml :index
 end
 
-post '/newNote' do
-  if params[:newNote].length >= 1
-    @newNote = params[:newNote]
-    @@redis.LPUSH("notes", @newNote)
+post '/newNote/:newNote' do
+  if params[:newNote]  && params[:newNote].length >= 1
+    newNote = params[:newNote]
+    @@redis.LPUSH("notes", newNote)
   end
 
   redirect '/'
 end
 
 post '/deleteNotes' do
-  @@redis.FLUSHALL
+  @@redis.DEL("notes")
 
   redirect '/'
 end
