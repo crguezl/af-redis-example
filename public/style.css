@@ -11,6 +11,10 @@ li {
   border: 1px solid black;
   max-width: 200px; }
 
+img {
+  height: 50px;
+  width: 50px; }
+
 #mainForm {
   background-color: #ff9a40;
   width: 300px; }

@@ -7,7 +7,7 @@
     %h1 Welcome to Redis on AppFog!
 
     #mainForm
-      %form{ :id => "newNote", :action => "/newNote", :method => "post" }
+      %form{ :id => "newNote", :action => "/insertNote", :method => "post" }
         %fieldset
           %label{ :for => "newNote" } Leave me a brief note!  
           %br
@@ -21,11 +21,10 @@
       %ul
         - @notes.each do |note|
           %li.note
-            %span #{note}
-            %br
-            %span.tiny #{@time}
+            #{note}
     
-    %form{ :id => "deleteNotes", :action => "/deleteNotes", :method => "post" }
+    %form{ :id => "deleteNotes", :action => "/", :method => "post" }
+      %input{ :type => "hidden", :name => "_method", :value => "delete" }
       %input{ :type => "submit", :value => "Delete all" }
 
     #counter
