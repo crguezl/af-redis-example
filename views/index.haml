@@ -11,16 +11,16 @@
         %fieldset
           %label{ :for => "newNote" } Leave me a brief note!  
           %br
-          %input{ :type => "text", :name => "newNote", :class => "textInput" }
+          %input{ :type => "text", :name => "newNote" }
           %br
           %input.button{ :type => "submit", :value => "Submit"}
           %br
-    
+
     #notes-container
       %h3 Notes:
       %ul
         - @notes.each do |note|
-          %li.note
+          %li
             #{note}
     
     %form{ :id => "deleteNotes", :action => "/", :method => "post" }

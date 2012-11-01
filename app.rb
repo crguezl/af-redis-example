@@ -13,20 +13,22 @@ configure do
   @@redis = Redis.new redis_conf
 end
 
+r = Redis::Namespace.new(:ns, :redis => @r)
+
 before do
-  @length = @@redis.LLEN("notes")
+  @length = r.LLEN("notes")
   @title = "Sinatra + Redis + AppFog = WIN"
 end
 
 get '/' do
-  @notes = @@redis.LRANGE("notes", 0, -1)
+  @notes = r.LRANGE("notes", 0, -1)
   haml :index
 end
 
 post '/insertNote' do
   if params[:newNote] && params[:newNote].length >= 1
     newNote = params[:newNote]
-    @@redis.LPUSH("notes", newNote)
+    r.LPUSH("notes", newNote)
     redirect to '/'
   else
     redirect to '/'
@@ -34,6 +36,6 @@ post '/insertNote' do
 end
 
 delete '/' do
-  @@redis.DEL("notes")
+  r.DEL("notes")
   redirect to '/'
 end
