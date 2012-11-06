@@ -2,9 +2,14 @@
 %html
   %head
     %title= @title
-    %link{ :rel => "stylesheet", :type => "text/css", :href => "style.css" }
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "bootstrap.css" }
   %body
     %h1 Welcome to Redis on AppFog!
+    %br
+
+    #imageContainer
+      %img{ :src => "appfog.png" }
+      %img{ :src => "redis.png"}
 
     #mainForm
       %form{ :id => "newNote", :action => "/insertNote", :method => "post" }
@@ -14,13 +19,12 @@
           %input{ :type => "text", :name => "newNote" }
           %br
           %input.button{ :type => "submit", :value => "Submit"}
-          %br
 
     #notes-container
       %h3 Notes:
       %ul
         - @notes.each do |note|
-          %li
+          %li.note
             #{note}
     
     %form{ :id => "deleteNotes", :action => "/", :method => "post" }
