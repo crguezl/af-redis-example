@@ -13,6 +13,8 @@ require 'json'
 #  @@redis = Redis.new redis_conf
 #end
 
+x = 10
+
 redis = Redis.new
 
 r = Redis::Namespace.new(:ns, :redis => @r)
